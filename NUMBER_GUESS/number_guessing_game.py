@@ -2,7 +2,7 @@
 import random
 
 def number_guessing():
-    secret_number = random.randint(1,10)
+    secret_number = random.randint(1,100)
     attempts = 0
 
     while True:
