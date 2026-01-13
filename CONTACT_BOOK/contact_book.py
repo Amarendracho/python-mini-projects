@@ -3,13 +3,20 @@
 add_contact_list = {}
 
 def add_contact():
-    global add_contact_list
 
     name = input("Enter Contact Name : ").strip()
     phone = input("Enter Contact Number : ").strip()
 
     if name == "" or phone == "":
-        print("Name/Number cannot be empty ⛔️")
+        print("❌ Name and phone cannot be empty")
+        return
+
+    if not phone.isdigit():
+        print("❌ Phone number must contain digits only")
+        return
+
+    if name in add_contact_list:
+        print("⚠️ Contact already exists")
         return
 
     add_contact_list[name] = phone
